@@ -4,7 +4,13 @@ This repo implements a full-stack job import pipeline using TypeScript, Next.js,
 
 ---
 
-##  Video Demonstration
+##  🎬 Project Demo
+
+<p align="center">
+  <video src="./clideo_editor_b49234132ac24318b3874c74b7489a05.mp4" controls width="700"></video>
+  <em>Watch the Job Import System demo</em>
+</p>
+
 
 
 ## Project Structure 
