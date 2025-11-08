@@ -3,15 +3,15 @@
 This repo implements a full-stack job import pipeline using TypeScript, Next.js, Express, MongoDB Atlas, Redis (BullMQ), and cron-based feed ingestion. The system fetches remote XML job feeds, converts them to JSON, enqueues processing tasks, stores/upserts jobs in MongoDB, and logs each import run for administrators to review in a Next.js dashboard.
 
 ---
-
-##  🎬 Project Demo
+## 🎬 Project Demo
 
 <p align="center">
-  <video src="./clideo_editor_b49234132ac24318b3874c74b7489a05.mp4" controls width="700"></video>
-  <em>Watch the Job Import System demo</em>
+  <a href="https://drive.google.com/file/d/1WMysVjHrbDf-3zCWVxw-jn7ibxEXWZ9z/view?usp=sharing" target="_blank">
+    <img src="https://img.shields.io/badge/🎥%20Watch%20Demo-Google%20Drive-blue?style=for-the-badge&logo=google-drive" alt="Watch Demo">
+  </a>
 </p>
 
-
+> Watch the complete walkthrough of the **Job Import System** showing job fetching, Redis queue processing, and MongoDB import tracking.
 
 ## Project Structure 
 ```
