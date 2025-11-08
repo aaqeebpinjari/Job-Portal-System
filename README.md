@@ -1,6 +1,11 @@
-# Job Import System (TypeScript MERN)
+# Job Import System (MERN+ Next js + Redis)
 
 This repo implements a full-stack job import pipeline using TypeScript, Next.js, Express, MongoDB Atlas, Redis (BullMQ), and cron-based feed ingestion. The system fetches remote XML job feeds, converts them to JSON, enqueues processing tasks, stores/upserts jobs in MongoDB, and logs each import run for administrators to review in a Next.js dashboard.
+
+---
+
+##  Video Demonstration
+
 
 ## Project Structure 
 ```
@@ -89,4 +94,4 @@ NEXT_PUBLIC_API_URL=http://localhost:5000
 
 ## 5. For more implementation details as System Design, refer to `docs/architecture.md`.
 
-----------------------------------------------------x-----------------------------------------------------------
+---
