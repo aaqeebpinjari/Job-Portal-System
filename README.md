@@ -13,6 +13,14 @@ This repo implements a full-stack job import pipeline using TypeScript, Next.js,
 
 > Watch the complete walkthrough of the **Job Import System** showing job fetching, Redis queue processing, and MongoDB import tracking.
 
+
+---
+
+
+## Live link : https://job-portal-frontend-eight-alpha.vercel.app/import-history
+
+---
+
 ## Project Structure 
 ```
 .
@@ -30,6 +38,8 @@ This repo implements a full-stack job import pipeline using TypeScript, Next.js,
 - npm 9+.
 - MongoDB Atlas (Cloud one)
 - Redis Cloud 
+
+---
 
 ## Quick Start to setup the project 
 
