@@ -88,9 +88,13 @@ export default function ImportHistoryPage() {
     <section className="space-y-6">
       <header className="space-y-2">
         <h2 className="text-2xl font-semibold text-slate-900">Import History</h2>
-        <p className="text-sm text-slate-600">
-          View summaries of automated job feed imports. Totals reflect jobs processed in each run.
+        <div className="mt-3 rounded-lg border-l-4 border-blue-500 bg-blue-50 p-4 shadow-sm">
+        <h3 className="font-semibold text-blue-700 mb-1">Automated Hourly Feed Imports</h3>
+        <p className="text-sm text-slate-700 leading-relaxed">
+         View summaries of automated job feed imports. Totals reflect jobs processed in each run.
+         Feeds are automatically fetched hourly, queued via <strong>Redis (BullMQ)</strong>, and updated in the database.
         </p>
+      </div>
       </header>
 
       <div className="flex flex-wrap items-center gap-4">
@@ -147,15 +151,33 @@ export default function ImportHistoryPage() {
               </tr>
             ) : (
               logs.map((log) => (
-                <tr key={log._id} className="hover:bg-slate-50">
-                  <td className="px-4 py-3 font-medium text-blue-600 break-all">{log.sourceUrl}</td>
+                <tr key={log._id} className="hover:bg-slate-50 transition">
+                  <td className="px-4 py-3 font-medium text-blue-600 break-all">
+                    {log.sourceUrl}
+                  </td>
                   <td className="px-4 py-3 text-slate-600">
                     {new Date(log.timestamp).toLocaleString()}
                   </td>
-                  <td className="px-4 py-3 text-right font-semibold text-slate-900">{log.totalFetched}</td>
-                  <td className="px-4 py-3 text-right text-green-600">{log.newJobs}</td>
-                  <td className="px-4 py-3 text-right text-amber-600">{log.updatedJobs}</td>
-                  <td className="px-4 py-3 text-right text-red-600">{log.failedJobs.length}</td>
+                  <td className="px-4 py-3 text-right">
+                    <span className="px-2 py-1 rounded-full text-xs font-semibold bg-blue-100 text-blue-800">
+                      {log.totalFetched}
+                    </span>
+                  </td>
+                  <td className="px-4 py-3 text-right">
+                    <span className="px-2 py-1 rounded-full text-xs font-semibold bg-green-100 text-green-800">
+                      {log.newJobs}
+                    </span>
+                  </td>
+                  <td className="px-4 py-3 text-right">
+                    <span className="px-2 py-1 rounded-full text-xs font-semibold bg-amber-100 text-amber-800">
+                      {log.updatedJobs}
+                    </span>
+                  </td>
+                  <td className="px-4 py-3 text-right">
+                    <span className="px-2 py-1 rounded-full text-xs font-semibold bg-red-100 text-red-800">
+                      {log.failedJobs.length}
+                    </span>
+                  </td>
                 </tr>
               ))
             )}
