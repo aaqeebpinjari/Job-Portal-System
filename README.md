@@ -13,7 +13,6 @@ The system fetches remote XML job feeds, converts them to JSON, enqueues process
 
 > Watch the complete walkthrough of the **Job Import System** showing job fetching, Redis queue processing, and MongoDB import tracking.
 
-
 ---
 
 ## 🌐 Live Links
@@ -71,21 +70,44 @@ CRON_SCHEDULE=0 * * * *
 NEXT_PUBLIC_API_URL=http://localhost:5000
 
 ```
-3. **Run the stack locally**
-## Go into the server and run this after setting the env variables
+
+3️⃣  **Run the stack locally**
+
+1. Connect Databases
+MongoDB Atlas:
+```
+Create a cluster → get the connection string → paste it in server/.env under ```MONGO_URI.
+
+```
+
+2. Redis Cloud:
+```
+
+Create an account → go to Connect → copy connection snippet → paste credentials in server/.env.
+
+```
+
+3. Go into the server or backend and run this after setting the env variables
+
    ```bash
    npm run dev
    ```
 
-## Go into the client and run this command after setting the env variable
+4. Go into the client and run this command after setting the env variable
    ```bash
    npm run dev
    ```
    
-- localhost: `http://localhost:3000`
+- localhost: `http://localhost:3000` Will show result Like this
+  
+<img width="1913" height="876" alt="image" src="https://github.com/user-attachments/assets/8dd019e8-c549-422b-8988-7cc08184fdcc" />
 
-## 4. ☁️ **Visit the admin UI** at `http://localhost:3000/import-history` to monitor import runs for history logs.
-## Deployment Notes
+
+5. ☁️ **Visit the admin UI** at `http://localhost:3000/` to monitor import runs for history logs will Given as Sample image output.
+<img width="1919" height="976" alt="image" src="https://github.com/user-attachments/assets/540f0a2e-6c85-4bfc-ae97-dd4589950363" />
+
+
+## 4️⃣ Deployment Notes
 -**Backend**: Deploy `server/` to any Node-compatible host (Render, Railway, etc.).
               Provide environment variables for MongoDB, Redis, and optional `CRON_SCHEDULE` / `BULL_CONCURRENCY` overrides.
 
